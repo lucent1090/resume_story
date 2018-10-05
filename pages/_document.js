@@ -15,6 +15,11 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
+          <meta charSet="utf-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, minimal-ui, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"
+          />
           <title>My page</title>
           {this.props.styleTags}
         </Head>

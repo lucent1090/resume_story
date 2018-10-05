@@ -4,7 +4,7 @@ export const person = {
   email: "lucent1090@gmail.com",
   tel: "+33 6 79 91 83 31",
   description:
-    "I'm a software engineer with a passion for frontend developing. With a great interested in the interaction between human and computer system, I build websites with a sensibility of good user experience and data visualisation projects. Self-motivated learner and team worker.",
+    "I'm a software engineer with a passion for frontend developing. With the great interested in the interaction between human and computer system, I like to build websites with a sensibility of good user experience and meaningful data visualisation projects. Self-motivated learner and team worker.",
   skills: ["JavaScript", "Reasonml", "Golang", "C/C++"],
   frameworks: {
     js: "React.js, D3.js, jQuery",

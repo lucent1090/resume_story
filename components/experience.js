@@ -9,8 +9,8 @@ const programmingJob = job => {
       <div>{job.company}</div>
       <div>{job.title}</div>
       <ul>
-        {job.description.map(jobDetail => (
-          <li key={job.duration}>{jobDetail}</li>
+        {job.description.map((jobDetail, idx) => (
+          <li key={job.jobDetail + idx.toString()}>{jobDetail}</li>
         ))}
       </ul>
     </div>
@@ -24,8 +24,8 @@ const divingJob = job => {
       <div>{job.place}</div>
       <div>{job.compant}</div>
       <ul>
-        {job.description.map(jobDetail => (
-          <li key={job.duration}>{jobDetail}</li>
+        {job.description.map((jobDetail, idx) => (
+          <li key={job.jobDetail + idx.toString()}>{jobDetail}</li>
         ))}
       </ul>
     </div>
