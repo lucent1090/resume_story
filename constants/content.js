@@ -7,10 +7,17 @@ export const person = {
     "I'm a software engineer with a passion for frontend developing. With the great interested in the interaction between human and computer system, I like to build websites with a sensibility of good user experience and meaningful data visualisation projects. Self-motivated learner and team worker.",
   skills: ["JavaScript", "Reasonml", "Golang", "C/C++"],
   frameworks: {
-    js: "React.js, D3.js, jQuery",
-    reasonml: "BuckleScript",
-    go: "RESTful API",
-    cplusplus: "OpenGL, OpenCV"
+    JavaScript: "React.js, D3.js, jQuery",
+    Reasonml: "BuckleScript",
+    Golang: "RESTful API",
+    "C/C++": "OpenGL, OpenCV"
+  },
+  languages: ["Mandarin Chinese", "English", "Japanese", "French"],
+  level: {
+    "Mandarin Chinese": "(Native)",
+    English: "(TOEIC 835, tested on 2013)",
+    Japanese: "(JLPT N3, tested on 2014)",
+    French: "(Basic conversation)"
   },
   ms: {
     year: "2010-2012",

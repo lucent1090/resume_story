@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import GlobalStyles from "../styles/global";
 import Basic from "../components/basic";
+import Language from "../components/language";
+import Skill from "../components/skill";
 import Experience from "../components/experience";
 import Publication from "../components/publication";
 import Education from "../components/education";
@@ -22,6 +24,8 @@ class Main extends React.Component {
     return (
       <Container>
         <Basic />
+        <Skill />
+        <Language />
         <Experience />
         <Publication />
         <Education />
