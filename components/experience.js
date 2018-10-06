@@ -1,22 +1,22 @@
-import React from "react";
-import styled from "styled-components";
-import { person } from "../constants/content";
-import { LeftRight, Marker, ItemTitle, ItemContent } from "../styles/common";
+import React from "react"
+import styled from "styled-components"
+import { person } from "../constants/content"
+import { LeftRight, Marker, ItemTitle, ItemContent } from "../styles/common"
 
 const Container = styled(LeftRight.Container)`
   margin-top: 1rem;
-`;
+`
 const SideMarker = styled(Marker)`
   margin: 0.3rem 0.9rem 35.5rem 0rem;
-`;
+`
 const List = styled.ul`
   padding-left: 1rem;
   margin: 0;
-`;
+`
 const Section = styled(ItemContent)`
   margin-top: 0.3rem;
   margin-bottom: 0.8rem;
-`;
+`
 
 const programmingJob = job => {
   return (
@@ -30,8 +30,8 @@ const programmingJob = job => {
         ))}
       </List>
     </Section>
-  );
-};
+  )
+}
 
 const divingJob = job => {
   return (
@@ -45,8 +45,8 @@ const divingJob = job => {
         ))}
       </List>
     </Section>
-  );
-};
+  )
+}
 
 export default class Experience extends React.Component {
   render() {
@@ -62,6 +62,6 @@ export default class Experience extends React.Component {
           {programmingJob(person.experience.ami)}
         </div>
       </Container>
-    );
+    )
   }
 }

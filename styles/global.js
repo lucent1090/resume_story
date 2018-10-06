@@ -1,4 +1,4 @@
-import { injectGlobal } from "styled-components";
+import { injectGlobal } from "styled-components"
 
 export default injectGlobal`
   * {
@@ -14,4 +14,4 @@ export default injectGlobal`
     width: 100%;
     margin: 0;
   }
-`;
+`
