@@ -1,13 +1,14 @@
-import React from "react"
+import React, { Fragment } from "react"
 import styled from "styled-components"
 import { person } from "../constants/content"
-import { LeftRight, Marker, ItemTitle, ItemContent } from "../styles/common"
+import { LeftRight, Marker, ItemTitle, ItemContent } from "./common"
 
 const Container = styled(LeftRight.Container)`
   margin-top: 1rem;
 `
 const SideMarker = styled(Marker)`
-  margin: 0.3rem 0.9rem 35.5rem 0rem;
+  margin: 0.3rem 0.9rem ${props => (props.showDiving ? "35.5rem" : "29.7rem")}
+    0rem;
 `
 const List = styled.ul`
   padding-left: 1rem;
@@ -50,6 +51,8 @@ const divingJob = job => {
 
 export default class Experience extends React.Component {
   render() {
+    const { showDiving } = this.props
+
     return (
       <Container>
         <SideMarker />
@@ -57,8 +60,12 @@ export default class Experience extends React.Component {
           <ItemTitle> Experience </ItemTitle>
           {programmingJob(person.experience.appier)}
           {programmingJob(person.experience.reporter)}
-          {divingJob(person.experience.okinawa)}
-          {divingJob(person.experience.bali)}
+          {showDiving && (
+            <Fragment>
+              {divingJob(person.experience.okinawa)}
+              {divingJob(person.experience.bali)}
+            </Fragment>
+          )}
           {programmingJob(person.experience.ami)}
         </div>
       </Container>

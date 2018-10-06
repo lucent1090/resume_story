@@ -25,8 +25,7 @@ class Main extends React.Component {
       <Container>
         <Basic />
         <Skill />
-        <Language />
-        <Experience />
+        <Experience showDiving={false} />
         <Publication />
         <Education />
       </Container>

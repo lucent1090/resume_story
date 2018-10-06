@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import styled from "styled-components"
 import { person } from "../constants/content"
-import { LeftRight, Marker, ItemTitle, ItemContent } from "../styles/common"
+import { LeftRight, Marker, ItemTitle, ItemContent } from "./common"
 
 const Container = styled(LeftRight.Container)`
   margin-top: 1rem;

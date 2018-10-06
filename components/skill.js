@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { person } from "../constants/content"
-import { LeftRight, Marker, ItemTitle, ItemContent } from "../styles/common"
+import { LeftRight, Marker, ItemTitle, ItemContent } from "./common"
 
 const SideMarker = styled(Marker)`
   margin: 0.3rem 0.9rem 3.5rem 0rem;

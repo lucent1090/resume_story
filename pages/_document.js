@@ -20,6 +20,10 @@ export default class MyDocument extends Document {
             name="viewport"
             content="width=device-width, minimal-ui, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"
           />
+          <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400"
+            rel="stylesheet"
+          />
           <title>My page</title>
           {this.props.styleTags}
         </Head>

@@ -1,30 +1,35 @@
 import React from "react"
 import styled from "styled-components"
 import { person } from "../constants/content"
-import { LeftRight } from "../styles/common"
+import { LeftRight } from "./common"
+import { colors, fontWight } from "../styles/theme"
+import Gmail from "./icons/gmail"
+import Phone from "./icons/phone"
 
 const Container = styled.div`
   width: 100%;
-  text-align: justify;
   margin-top: 1rem;
 `
 const PersonalInfo = styled(LeftRight.Container)`
-  margin-bottom: 0.4rem;
-`
-const Contact = styled(LeftRight.Right)`
-  font-size: 12px;
+  margin-bottom: 0.5rem;
 `
 const Name = styled.div`
-  font-weight: bold;
+  font-size: 1.8rem;
+  font-weight: ${fontWight.bold};
+  color: ${colors.lightGreen};
+  margin-bottom: 0.3rem;
 `
-const JobTitle = styled.div`
-  font-size: 0.9rem;
+const JobTitle = styled(LeftRight.Left)`
+  font-size: 1.3rem;
+  font-weight: ${fontWight.bold};
+  justify-content: center;
 `
 const AboutMe = styled.div`
-  font-size: 12px;
+  width: 88%;
+  font-size: 1rem;
 `
 const Separator = styled.div`
-  border-top: 1px solid #000;
+  border-top: 1px solid ${colors.lightText};
   margin: 0.8rem 1.5rem;
 `
 
@@ -38,17 +43,15 @@ export default class Basic extends React.Component {
   render() {
     return (
       <Container innerRef={comp => (this.basic = comp)}>
+        <Name> {person.name} </Name>
         <PersonalInfo>
-          <LeftRight.Left>
-            <Name> {person.name} </Name>
-            <JobTitle> {person.job} </JobTitle>
-          </LeftRight.Left>
-          <Contact>
-            <div> {person.email} </div>
-            <div> {person.tel} </div>
-          </Contact>
+          <JobTitle> {person.job} </JobTitle>
+          <LeftRight.Right>
+            <Gmail />
+            <Phone />
+          </LeftRight.Right>
         </PersonalInfo>
-        <AboutMe>{person.description}</AboutMe>
+        <AboutMe>{person.descriptionShort}</AboutMe>
         <Separator />
       </Container>
     )

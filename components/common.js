@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { colors, fontWight } from "../styles/theme"
 
 const LeftRightContainer = styled.div`
   width: 100%;
@@ -21,11 +22,13 @@ export const LeftRight = {
 }
 
 export const Marker = styled(Left)`
-  border: 2px solid #002e73;
+  border: 2px solid ${colors.lightOrange};
 `
 export const ItemTitle = styled.div`
-  color: #002e73;
+  font-size: 1.1rem;
+  font-weight: ${fontWight.bold};
+  color: ${colors.lightOrange};
 `
 export const ItemContent = styled.div`
-  font-size: 0.8rem;
+  font-size: 1rem;
 `
