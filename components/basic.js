@@ -8,7 +8,7 @@ import Phone from "./icons/phone"
 
 const Container = styled.div`
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 1.3rem;
 `
 const PersonalInfo = styled(LeftRight.Container)`
   margin-bottom: 0.5rem;
@@ -17,7 +17,7 @@ const Name = styled.div`
   font-size: 1.8rem;
   font-weight: ${fontWight.bold};
   color: ${colors.lightGreen};
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
 `
 const JobTitle = styled(LeftRight.Left)`
   font-size: 1.3rem;
@@ -25,12 +25,11 @@ const JobTitle = styled(LeftRight.Left)`
   justify-content: center;
 `
 const AboutMe = styled.div`
-  width: 88%;
-  font-size: 1rem;
+  // width: 88%;
 `
 const Separator = styled.div`
   border-top: 1px solid ${colors.lightText};
-  margin: 0.8rem 1.5rem;
+  margin: 0.5rem 1.5rem;
 `
 
 export default class Basic extends React.Component {

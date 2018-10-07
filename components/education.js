@@ -1,26 +1,27 @@
 import React, { Fragment } from "react"
 import styled from "styled-components"
 import { person } from "../constants/content"
-import { LeftRight, Marker, ItemTitle, ItemContent } from "./common"
+import { LeftRight, ItemTitle, ItemContent } from "./common"
+import Marker from "./icons/marker"
 
 const Container = styled(LeftRight.Container)`
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-`
-const SideMarker = styled(Marker)`
-  margin: 0.3rem 0.9rem 10rem 0rem;
+  // margin-top: 1rem;
 `
 const Section = styled(ItemContent)`
-  margin-top: 0.2rem;
-  margin-bottom: 0.5rem;
+  // margin-top: 0.2rem;
+  // margin-bottom: 0.3rem;
+`
+const FixedWidth = styled.div`
+  display: inline-block;
+  width: ${props => props.w}rem;
 `
 
 const education = education => {
   return (
     <Fragment>
-      <div> {education.year} </div>
-      <div> {education.school} </div>
-      <div> {education.degree} </div>
+      <FixedWidth w={2}> {education.degree} </FixedWidth>
+      <FixedWidth w={5}> {education.year} </FixedWidth>
+      <FixedWidth w={6}> {education.school} </FixedWidth>
     </Fragment>
   )
 }
@@ -29,7 +30,7 @@ export default class Education extends React.Component {
   render() {
     return (
       <Container>
-        <SideMarker />
+        <Marker />
         <div>
           <ItemTitle> Education </ItemTitle>
           <Section> {education(person.ms)} </Section>

@@ -22,15 +22,13 @@ export const person = {
   },
   ms: {
     year: "2010-2012",
-    school:
-      "National Taiwan University Graduate Institute of Networking and Multimedia",
-    degree: "Master of Science Specialize in Computer Graphics",
+    school: "NTU GINM",
+    degree: "MS",
   },
   bs: {
     year: "2005-2009",
-    school:
-      "National Chi Nan University Computer Science and Information Engineering",
-    degree: "Bachelor of Science",
+    school: "NCNU CSIE",
+    degree: "BS",
   },
   publication: {
     conference: "ACM Siggraph 2012 Poster",
@@ -61,8 +59,8 @@ export const person = {
     },
     ami: {
       duration: "2013.12-2015.04",
-      company: "American Megatrends Inc.",
-      title: "BIOS Assistant Engineer and Project Owner",
+      company: "AMI",
+      title: "BIOS Assistant Engineer",
       description: [
         "UEFI firmware engineer for NB and tablet",
         "Project Owner with Loveland Broadwel, co-working with OEM team and ODM team",

@@ -1,20 +1,18 @@
 import React from "react"
 import styled from "styled-components"
 import { person } from "../constants/content"
-import { LeftRight, Marker, ItemTitle, ItemContent } from "./common"
+import { LeftRight, ItemTitle, ItemContent } from "./common"
+import Marker from "./icons/marker"
 
 const Container = styled(LeftRight.Container)`
   margin-top: 1rem;
-`
-const SideMarker = styled(Marker)`
-  margin: 0.3rem 0.9rem 3.5rem 0rem;
 `
 
 export default class Language extends React.Component {
   render() {
     return (
       <Container>
-        <SideMarker />
+        <Marker />
         <div>
           <ItemTitle> Language </ItemTitle>
           {person.languages.map(language => {

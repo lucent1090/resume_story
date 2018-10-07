@@ -1,14 +1,11 @@
 import React, { Fragment } from "react"
 import styled from "styled-components"
 import { person } from "../constants/content"
-import { LeftRight, Marker, ItemTitle, ItemContent } from "./common"
+import { LeftRight, ItemTitle, ItemContent } from "./common"
+import Marker from "./icons/marker"
 
 const Container = styled(LeftRight.Container)`
-  margin-top: 1rem;
-`
-const SideMarker = styled(Marker)`
-  margin: 0.3rem 0.9rem ${props => (props.showDiving ? "35.5rem" : "29.7rem")}
-    0rem;
+  margin-top: 0.6rem;
 `
 const List = styled.ul`
   padding-left: 1rem;
@@ -16,20 +13,19 @@ const List = styled.ul`
 `
 const Section = styled(ItemContent)`
   margin-top: 0.3rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
 `
 
 const programmingJob = job => {
   return (
     <Section>
       <div>{job.duration}</div>
-      <div>{job.company}</div>
-      <div>{job.title}</div>
-      <List>
+      <div>{job.company + " " + job.title}</div>
+      {/* <List>
         {job.description.map((jobDetail, idx) => (
           <li key={job.jobDetail + idx.toString()}>{jobDetail}</li>
         ))}
-      </List>
+      </List> */}
     </Section>
   )
 }
@@ -55,7 +51,7 @@ export default class Experience extends React.Component {
 
     return (
       <Container>
-        <SideMarker />
+        <Marker />
         <div>
           <ItemTitle> Experience </ItemTitle>
           {programmingJob(person.experience.appier)}

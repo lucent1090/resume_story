@@ -24,10 +24,10 @@ class Main extends React.Component {
     return (
       <Container>
         <Basic />
-        <Skill />
-        <Experience showDiving={false} />
-        <Publication />
         <Education />
+        <Publication />
+        <Experience showDiving={false} />
+        <Skill />
       </Container>
     )
   }

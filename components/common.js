@@ -14,16 +14,11 @@ const Right = styled.div`
   margin-top: auto;
   text-align: right;
 `
-
 export const LeftRight = {
   Container: LeftRightContainer,
   Left,
   Right,
 }
-
-export const Marker = styled(Left)`
-  border: 2px solid ${colors.lightOrange};
-`
 export const ItemTitle = styled.div`
   font-size: 1.1rem;
   font-weight: ${fontWight.bold};
