@@ -10,27 +10,37 @@ import Education from "../components/education"
 
 const Container = styled.div`
   width: 100%;
+  min-height: 100vh;
+  border: 1px solid red;
   padding: 0 1.6rem;
 `
 
-class Main extends React.Component {
+export default class Main extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      status: "intro", // -> final
+    }
+  }
+
   componentDidMount() {
-    // window.addEventListener('scroll', () => {console.log('tmp')})
+    window.addEventListener("scroll", () => {})
     // const rect = this.basic.getBoundingClientRect()
     // console.log(this.basic)
   }
 
   render() {
+    const { status, nScene } = this.state
+
     return (
       <Container>
-        <Basic />
-        <Education />
-        <Publication />
-        <Experience showDiving={false} />
+        <Basic status={status} />
+        <Education status={status} />
+        <Publication status={status} />
+        <Experience status={status} showDiving={false} />
         <Skill />
+        {status !== "final" && <Language />}
       </Container>
     )
   }
 }
-
-export default Main

@@ -16,16 +16,18 @@ const Section = styled(ItemContent)`
   margin-bottom: 0.6rem;
 `
 
-const programmingJob = job => {
+const programmingJob = (showJobContent, job) => {
   return (
     <Section>
       <div>{job.duration}</div>
       <div>{job.company + " " + job.title}</div>
-      {/* <List>
-        {job.description.map((jobDetail, idx) => (
-          <li key={job.jobDetail + idx.toString()}>{jobDetail}</li>
-        ))}
-      </List> */}
+      {showJobContent && (
+        <List>
+          {job.description.map((jobDetail, idx) => (
+            <li key={job.jobDetail + idx.toString()}>{jobDetail}</li>
+          ))}
+        </List>
+      )}
     </Section>
   )
 }
@@ -47,22 +49,23 @@ const divingJob = job => {
 
 export default class Experience extends React.Component {
   render() {
-    const { showDiving } = this.props
+    const { showDiving, status } = this.props
+    const showJobContent = status !== "final"
 
     return (
       <Container>
         <Marker />
         <div>
           <ItemTitle> Experience </ItemTitle>
-          {programmingJob(person.experience.appier)}
-          {programmingJob(person.experience.reporter)}
+          {programmingJob(showJobContent, person.experience.appier)}
+          {programmingJob(showJobContent, person.experience.reporter)}
           {showDiving && (
             <Fragment>
               {divingJob(person.experience.okinawa)}
               {divingJob(person.experience.bali)}
             </Fragment>
           )}
-          {programmingJob(person.experience.ami)}
+          {programmingJob(showJobContent, person.experience.ami)}
         </div>
       </Container>
     )

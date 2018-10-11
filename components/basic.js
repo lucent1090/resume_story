@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import styled from "styled-components"
 import { person } from "../constants/content"
 import { LeftRight } from "./common"
@@ -33,13 +33,9 @@ const Separator = styled.div`
 `
 
 export default class Basic extends React.Component {
-  componentDidMount() {
-    // console.log(this.basic)
-    const rect = this.basic.getBoundingClientRect()
-    console.log(rect)
-  }
-
   render() {
+    const { status } = this.props
+
     return (
       <Container innerRef={comp => (this.basic = comp)}>
         <Name> {person.name} </Name>
@@ -50,8 +46,12 @@ export default class Basic extends React.Component {
             <Phone />
           </LeftRight.Right>
         </PersonalInfo>
-        <AboutMe>{person.descriptionShort}</AboutMe>
-        <Separator />
+        {status === "final" && (
+          <Fragment>
+            <AboutMe>{person.descriptionShort}</AboutMe>
+            <Separator />
+          </Fragment>
+        )}
       </Container>
     )
   }

@@ -20,15 +20,33 @@ export const person = {
     Japanese: "(JLPT N3, tested on 2014)",
     French: "(Basic conversation)",
   },
-  ms: {
-    year: "2010-2012",
-    school: "NTU GINM",
-    degree: "MS",
-  },
-  bs: {
-    year: "2005-2009",
-    school: "NCNU CSIE",
-    degree: "BS",
+  education: {
+    brief: {
+      ms: {
+        year: "2010-2012",
+        school: "NTU GINM",
+        degree: "MS",
+      },
+      bs: {
+        year: "2005-2009",
+        school: "NCNU CSIE",
+        degree: "BS",
+      },
+    },
+    full: {
+      ms: {
+        year: "2010-2012",
+        school:
+          "National Taiwan University Graduate Institute of Networking and Multimedia",
+        degree: "Master of Science. Specialize in Computer Graphics",
+      },
+      bs: {
+        year: "2005-2009",
+        school:
+          "National Chi Nan University Computer Science and Information Engineering",
+        degree: "Bachelor of Science",
+      },
+    },
   },
   publication: {
     conference: "ACM Siggraph 2012 Poster",

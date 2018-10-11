@@ -4,37 +4,68 @@ import { person } from "../constants/content"
 import { LeftRight, ItemTitle, ItemContent } from "./common"
 import Marker from "./icons/marker"
 
+const widthForBrief = {
+  degreeWidth: 2,
+  yearWidth: 5,
+  schoolWidth: 6,
+}
+
 const Container = styled(LeftRight.Container)`
   // margin-top: 1rem;
 `
 const Section = styled(ItemContent)`
-  // margin-top: 0.2rem;
-  // margin-bottom: 0.3rem;
+  ${props => {
+    return props.addBottomSpace ? "" : "margin-bottom: 0.5rem;"
+  }};
 `
-const FixedWidth = styled.div`
+const MinWidth = styled.div`
   display: inline-block;
-  width: ${props => props.w}rem;
+  min-width: ${props => props.width}rem;
 `
 
-const education = education => {
+const educationBrief = education => {
+  const { wDegree, wYear, wSchool } = widthForBrief
+
   return (
     <Fragment>
-      <FixedWidth w={2}> {education.degree} </FixedWidth>
-      <FixedWidth w={5}> {education.year} </FixedWidth>
-      <FixedWidth w={6}> {education.school} </FixedWidth>
+      <MinWidth width={wDegree}> {education.degree} </MinWidth>
+      <MinWidth width={wYear}> {education.year} </MinWidth>
+      <MinWidth width={wSchool}> {education.school} </MinWidth>
+    </Fragment>
+  )
+}
+
+const educationFull = education => {
+  return (
+    <Fragment>
+      <div> {education.year} </div>
+      <div> {education.school} </div>
+      <div> {education.degree} </div>
     </Fragment>
   )
 }
 
 export default class Education extends React.Component {
   render() {
+    const { status } = this.props
+    const showBriefEducation = status === "final"
+    const { ms, bs } = showBriefEducation
+      ? person.education.brief
+      : person.education.full
+
     return (
       <Container>
         <Marker />
         <div>
           <ItemTitle> Education </ItemTitle>
-          <Section> {education(person.ms)} </Section>
-          <Section> {education(person.bs)} </Section>
+          <Section addBottomSpace={showBriefEducation}>
+            {" "}
+            {showBriefEducation ? educationBrief(ms) : educationFull(ms)}{" "}
+          </Section>
+          <ItemContent>
+            {" "}
+            {showBriefEducation ? educationBrief(bs) : educationFull(bs)}{" "}
+          </ItemContent>
         </div>
       </Container>
     )
