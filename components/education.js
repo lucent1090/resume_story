@@ -11,7 +11,7 @@ const widthForBrief = {
 }
 
 const Container = styled(LeftRight.Container)`
-  // margin-top: 1rem;
+  ${props => (props.status === "hide" ? "opacity: 0" : "")};
 `
 const Section = styled(ItemContent)`
   ${props => {
@@ -46,6 +46,12 @@ const educationFull = education => {
 }
 
 export default class Education extends React.Component {
+  componentDidMount() {
+    const { setBounding } = this.props
+
+    setBounding("education", this.education.getBoundingClientRect())
+  }
+
   render() {
     const { status } = this.props
     const showBriefEducation = status === "final"
@@ -54,7 +60,7 @@ export default class Education extends React.Component {
       : person.education.full
 
     return (
-      <Container>
+      <Container innerRef={comp => (this.education = comp)} status={status}>
         <Marker />
         <div>
           <ItemTitle> Education </ItemTitle>

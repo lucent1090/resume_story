@@ -9,6 +9,7 @@ import Phone from "./icons/phone"
 const Container = styled.div`
   width: 100%;
   margin-top: 1.3rem;
+  ${props => (props.status === "hide" ? "opacity: 0" : "")};
 `
 const PersonalInfo = styled(LeftRight.Container)`
   margin-bottom: 0.5rem;
@@ -33,11 +34,17 @@ const Separator = styled.div`
 `
 
 export default class Basic extends React.Component {
+  componentDidMount() {
+    const { setBounding } = this.props
+
+    setBounding("basic", this.basic.getBoundingClientRect())
+  }
+
   render() {
     const { status } = this.props
 
     return (
-      <Container innerRef={comp => (this.basic = comp)}>
+      <Container innerRef={comp => (this.basic = comp)} status={status}>
         <Name> {person.name} </Name>
         <PersonalInfo>
           <JobTitle> {person.job} </JobTitle>

@@ -6,6 +6,7 @@ import Marker from "./icons/marker"
 
 const Container = styled(LeftRight.Container)`
   margin-top: 0.6rem;
+  ${props => (props.status === "hide" ? "opacity: 0" : "")};
 `
 const List = styled.ul`
   padding-left: 1rem;
@@ -48,12 +49,18 @@ const divingJob = job => {
 }
 
 export default class Experience extends React.Component {
+  componentDidMount() {
+    const { setBounding } = this.props
+
+    setBounding("experience", this.experience.getBoundingClientRect())
+  }
+
   render() {
     const { showDiving, status } = this.props
     const showJobContent = status !== "final"
 
     return (
-      <Container>
+      <Container innerRef={comp => (this.experience = comp)} status={status}>
         <Marker />
         <div>
           <ItemTitle> Experience </ItemTitle>

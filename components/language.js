@@ -6,12 +6,20 @@ import Marker from "./icons/marker"
 
 const Container = styled(LeftRight.Container)`
   margin-top: 1rem;
+  ${props => (props.status === "hide" ? "opacity: 0" : "")};
 `
 
 export default class Language extends React.Component {
+  componentDidMount() {
+    const { setBounding } = this.props
+
+    setBounding("language", this.language.getBoundingClientRect())
+  }
+
   render() {
+    const { status } = this.props
     return (
-      <Container>
+      <Container innerRef={comp => (this.language = comp)} status={status}>
         <Marker />
         <div>
           <ItemTitle> Language </ItemTitle>
